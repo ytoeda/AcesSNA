@@ -44,3 +44,4 @@ country = ["US", "JAPAN", "FRANCE", "PORTUGAL", "CHILE", "TAIWAN", "SOUTH KOREA"
 countrylist = []
 for i in range(0, 1000):
     countrylist.append(country[random.randint(0,29)])
+
