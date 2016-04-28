@@ -87,4 +87,5 @@ for i in range(0, 1000):
                 connectivitylist.append([i, id])
                 count += 1
 
-print(len(connectivitylist))
+# Creating nodes and Graph
+
