@@ -45,3 +45,46 @@ countrylist = []
 for i in range(0, 1000):
     countrylist.append(country[random.randint(0,29)])
 
+idlist = [x for x in range(1000)]
+
+count = 0
+connectivitylist = []
+for i in range(0, 1000):
+    count = 0
+    if 15 <= agelist[i] <= 20:
+        while count < 15:
+            id = random.randint(0, 999)
+            if id == i:
+                continue
+            else:
+                connectivitylist.append([i, id])
+                count += 1
+
+    elif 21 <= agelist[i] <= 30:
+        while count < 25:
+            id = random.randint(0, 999)
+            if id == i:
+                continue
+            else:
+                connectivitylist.append([i, id])
+                count += 1
+
+    elif 31 <= agelist[i] <= 40:
+        while count < 10:
+            id = random.randint(0, 999)
+            if id == i:
+                continue
+            else:
+                connectivitylist.append([i, id])
+                count += 1
+
+    else:
+        while count < 5:
+            id = random.randint(0, 999)
+            if id == i:
+                continue
+            else:
+                connectivitylist.append([i, id])
+                count += 1
+
+print(len(connectivitylist))
