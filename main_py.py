@@ -52,7 +52,7 @@ connectivitylist = []
 for i in range(0, 1000):
     count = 0
     if 15 <= agelist[i] <= 20:
-        while count < 15:
+        while count < 5:
             id = random.randint(0, 999)
             if id == i:
                 continue
@@ -61,7 +61,7 @@ for i in range(0, 1000):
                 count += 1
 
     elif 21 <= agelist[i] <= 30:
-        while count < 25:
+        while count < 7:
             id = random.randint(0, 999)
             if id == i:
                 continue
@@ -70,7 +70,7 @@ for i in range(0, 1000):
                 count += 1
 
     elif 31 <= agelist[i] <= 40:
-        while count < 10:
+        while count < 3:
             id = random.randint(0, 999)
             if id == i:
                 continue
@@ -79,7 +79,7 @@ for i in range(0, 1000):
                 count += 1
 
     else:
-        while count < 5:
+        while count < 1:
             id = random.randint(0, 999)
             if id == i:
                 continue
@@ -89,3 +89,24 @@ for i in range(0, 1000):
 
 # Creating nodes and Graph
 
+def recommendationList(name):
+    id = nameslist.index(name)
+    idlist = []
+    for i in connectivitylist:
+        if i[0] == id:
+            idlist.append(i[1])
+
+    iidlist = []
+    for j in idlist:
+        for i in connectivitylist:
+            if i[0] == j and j != id:
+                iidlist.append(i[1])
+
+    iidset = set(iidlist)
+
+    print("People " + name + " may know!" )
+    for i in iidset:
+        print(nameslist[i])
+
+    print(len(iidset))
+recommendationList("Jacob")
